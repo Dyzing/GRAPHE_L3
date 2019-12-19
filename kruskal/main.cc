@@ -79,7 +79,7 @@ int lecture(std::string input, krustkalalgo& G){
         std::vector<std::string> args;
         while ((i < ligne.length()) and (args.size()<1)) {
           std::string arg = "";
-          while ((i < ligne.length()) and (ligne[i]==' ')) ++i;
+          while  ((i < ligne.length()) and (ligne[i]==' ')) ++i;
           while ((i < ligne.length()) and (ligne[i]!=' ')) {arg+=ligne[i]; ++i;}
           if (arg.length() > 0) args.push_back(arg);
         }
@@ -105,10 +105,10 @@ int main(int argc, char** argv){
   if (argc != 2) std::cout << "Pas de fichier en paramêtre" << std::endl;
   else lecture(argv[1],G);
   G.initNbArc();
+  std::cout << std::endl;
   G.affichageMatrice();
-//  G.parcoursProfondeur();
-//  G.parcoursLargeur();
-  std::cout << "adam" << std::endl;
+  std::cout << std::endl;
   G.krustkal();
   return 0;
+  //  std::cout << std::endl <<  "adam ondra le goat" << std::endl << std::endl;
 }
